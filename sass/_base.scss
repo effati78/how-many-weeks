@@ -1,0 +1,26 @@
+@font-face {
+  font-family: IRANSansWeb;
+  src: url('../font/IRANSansWeb/IRANSansWeb\(FaNum\).ttf');
+  font-style: normal;
+  font-weight: normal;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  direction: rtl;
+  text-align: right;
+  font-family: IRANSansWeb;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}

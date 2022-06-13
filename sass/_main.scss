@@ -1,0 +1,159 @@
+.weeks {
+  padding: 50px 10%;
+  display: grid;
+  grid-template-columns: repeat(52, 1fr);
+  gap: 5px;
+  direction: ltr;
+
+  span {
+    background-color: #fff;
+    height: 15px;
+    border-radius: 3px;
+    border: 1px solid #000;
+
+    &.active {
+      background-color: #000;
+    }
+  }
+}
+
+// .processing {
+//     text-align: center;
+//     margin-top: 50px;
+
+//     &.hidden {
+//         display: none;
+//     }
+// }
+
+/* Modal */
+.modal {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.9);
+  transition: opacity 0.25s ease;
+
+  &-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+  }
+
+  &-state {
+    display: none;
+  }
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &.active .modal__inner {
+    top: 0;
+  }
+
+  &-inner {
+    transition: top 0.25s ease;
+    position: absolute;
+    top: -20%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    margin: auto;
+    overflow: auto;
+    background: #fff;
+    border-radius: 5px;
+    padding: 1em 2em;
+    height: 50%;
+  }
+
+  &-close {
+    position: absolute;
+    left: 1em;
+    top: 1em;
+    width: 1.1em;
+    height: 1.1em;
+    cursor: pointer;
+
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 1.5em;
+      background: #ccc;
+      display: block;
+      transform: rotate(45deg);
+      left: 50%;
+      margin: -3px 0 0 -1px;
+      top: 0;
+    }
+
+    &:hover {
+      &::after,
+      &::before {
+        background: #aaa;
+      }
+    }
+
+    &::before {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &-box {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+
+    input {
+      width: 50%;
+      border: 1px solid #343a40;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 0.9rem;
+      text-align: center;
+      color: #343a40;
+
+      &:focus {
+        outline: 2px solid #343a40d2;
+        outline-offset: 3px;
+      }
+
+      &::placeholder {
+        color: #343a40;
+      }
+    }
+
+    button {
+      cursor: pointer;
+      background-color: #28a745;
+      width: 50%;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 0.9rem;
+      text-align: center;
+      color: #fff;
+
+      &:focus {
+        outline: 2px solid #28a745;
+        outline-offset: 3px;
+      }
+    }
+  }
+}
